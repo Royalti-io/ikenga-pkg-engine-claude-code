@@ -10,24 +10,7 @@
     "key": "royalti"
   },
 
-  "ui": {
-    "nav": [
-      {
-        "id": "engine.sessions",
-        "label": "Sessions",
-        "icon": "message-circle",
-        "section": "engine",
-        "route": "/pkg/com.ikenga.engine-claude-code/sessions"
-      }
-    ],
-    "routes": [
-      {
-        "path": "/sessions",
-        "kind": "iframe",
-        "source": "dist/sessions/index.html"
-      }
-    ]
-  },
+  "ui": {},
 
   "permissions": {
     "shell.execute": ["claude"],
