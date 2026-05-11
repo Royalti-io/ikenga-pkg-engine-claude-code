@@ -118,3 +118,8 @@ export function createEngine(host: HostBridge): Engine {
 }
 
 export default createEngine;
+
+// Phase 10: ACP-shaped engine surface. The legacy `createEngine` + `Engine`
+// above is retained for one release; new consumers target `AcpEngine`.
+export { createAcpEngine } from './acp-engine.js';
+export type { AcpHost, AcpUnlisten } from './acp-engine.js';
