@@ -64,6 +64,34 @@ export class ClaudeCodeEngine implements Engine {
 	readonly id = ID;
 	readonly version = VERSION;
 
+	// Mirrors manifest.json `engine` block. Static — kept in sync manually
+	// because the legacy `createEngine` factory is slated for removal in
+	// Phase 11; not worth wiring JSON imports just to delete it next release.
+	readonly metadata = {
+		agentId: 'claude-code',
+		display: 'Claude Code',
+		capabilities: {
+			streaming: true,
+			toolUse: true,
+			thinking: true,
+			artifacts: true,
+			fileAttachments: true,
+			imageInput: true,
+			slashCommands: true,
+			modelSwitching: true,
+			promptCaching: true,
+			agenticTools: true,
+			mcp: true,
+			sessionResume: true,
+		},
+		onboarding: {
+			requiredVaultKeys: ['ANTHROPIC_API_KEY'],
+			requiredEnvVars: [] as string[],
+			authCommand: 'claude login',
+			docsUrl: 'https://docs.anthropic.com/en/docs/claude-code',
+		},
+	};
+
 	constructor(private readonly host: HostBridge) {}
 
 	async startSession(opts: SessionOpts): Promise<Session> {
