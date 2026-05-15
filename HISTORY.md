@@ -1,5 +1,11 @@
 # History & migration
 
+## 0.2.0
+
+Engine + ACP adapter interfaces moved to `@ikenga/contract/engine`.
+No runtime change. Adapters and consumers should import the types
+from the contract package.
+
 This pkg was extracted from the Ikenga shell on 2026-05-06 as a snapshot copy.
 
 ## Source files
